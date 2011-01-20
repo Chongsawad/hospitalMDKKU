@@ -1,0 +1,40 @@
+name = hospital
+description = A flexible  business theme for Life Care.
+package = Core
+version = VERSION
+core = 7.x
+engine = phptemplate
+screenshot = screenshot.jpg
+
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/ie7.css
+;scripts[] = js/jquery-menu.min.js
+;scripts[] = js/ja-script.js
+
+regions[sidebar_left] = Left sidebar
+regions[sidebar_right] = Right sidebar
+regions[header_right] = Header Right
+
+regions[navigation] = Menu
+regions[content] = Content
+regions[content_bottom] = Content Bottom
+regions[user1] = User 1
+regions[user2] = User 2
+regions[user3] = User 3
+regions[user4] = User 4
+regions[upper1] = Upper 1
+regions[upper2] = Upper 2
+
+regions[footer1] = Footer content
+regions[footer2] = Footer menu
+
+
+;theme settings default values
+settings[font_resize]   = yes
+settings[menu_style]   = superfish
+settings[slideshow]   = yes
+
+
+
+
+

@@ -1,0 +1,169 @@
+/**
+ * @package Beauty Parlour Business Theme - Adodis Drupal Theme
+ * @version 1.1 November 25, 2010
+ * @author Adodis Theme http://www.drupal-themes.adodis.com
+ * @copyright Copyright (C) 2010 Adodis Drupal Theme
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ */ /******** SUCKERFISH MENU STYLE ***********/
+#menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#menu a {
+	display: block;
+	margin: 0;
+		padding: 9px 23px;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;;
+	color: #FFFFFF;
+	text-decoration: none;
+	outline: none;
+margin-left:3px;
+}
+
+#menu li {
+	float: left;
+	list-style: none;
+
+}
+
+#menu li.last a {
+	border: none;
+
+}
+
+
+
+/*
+
+#menu li.active-trail,#menu li a.active,#menu li a.active-trail:hover,#menu li a.active-trail
+	{
+
+	margin: 0;
+}
+
+#menu li li.active-trail,#menu li li a.active,#menu li li a.active-trail:hover,#menu li li a.active-trail
+	{
+	background: #FACEDF;
+	margin: 1px 0 0 0;
+}
+*/
+
+
+#menu li a:hover {
+	background: #ffffff;
+
+}
+
+
+#menu li:hover,#menu li.sfHover,#menu .menu a:hover
+{
+	/*background: #fff;*/
+	color:#D53503;
+	outline: 0;
+}
+#menu li:hover,#menu li.sfHover
+{
+ background: url(../images/left.jpg) no-repeat;
+
+}
+#menu li a:hover
+{
+ background:transparent url(../images/right.jpg) no-repeat scroll right top;
+	color:#000000;
+}
+#menu ul li.active-trail {
+
+
+/* background:transparent url(../images/right.jpg) no-repeat scroll right top; */
+background: url(../images/left.jpg) no-repeat;
+/*	padding:11px 20px;*/
+
+
+}
+#menu ul li a.active-trail
+{
+ /*background: url(../images/left.jpg) no-repeat;*/
+	 background:transparent url(../images/right.jpg) no-repeat scroll right top;
+/*padding:9px 0 9px 9px;*/
+	/* padding:9px 0 9px 0;*/
+	color:#000000;
+}
+
+
+
+
+/*** First Level menu *****/
+#menu li ul {
+	position: absolute;
+	width: 170px;
+	margin: 0 0 0 -1px;
+	left: -999em;
+	background: #FFFFFF;
+	z-index: 100;
+	padding: 1px;
+	left: -999em;
+	border: 1px solid #FACEDF;
+}
+
+#menu li:hover ul {
+	left: auto;
+}
+
+#menu li ul li {
+	margin: 0;
+}
+
+#menu li ul li a {
+	padding: 9px 5px 9px 20px;
+	border-bottom: 1px solid #FACEDF;
+	border-right: none;
+	width: 145px;
+}
+
+#menu li ul li.last a {
+	border: none;
+}
+
+#menu li ul li a:hover,#menu li ul li:hover {
+	background: #FACEDF;
+}
+
+#menu li ul li:hover a {
+	color: #572C3D;
+	padding-right: 5px;
+}
+
+#menu li:hover ul ul,#menu li.sfhover ul ul {
+	left: -999em;
+}
+
+/*** Second Level menu *****/
+#menu li ul ul {
+	margin-left: 169px;
+	position: absolute;
+	width: 170px;
+	margin-top: -41px;
+	left: -999em;
+	background: #FFFFFF;
+	z-index: 100;
+	padding-left: 1px;
+}
+
+#menu li ul ul li {
+	margin: 0;
+}
+
+#menu li ul li ul li:hover a {
+	background: #FACEDF;
+}
+
+#menu li ul li ul li.last {
+	border: none;
+}
+
+#menu li:hover ul li:hover ul {
+	left: auto;
+}

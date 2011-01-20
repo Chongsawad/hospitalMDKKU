@@ -1,0 +1,68 @@
+<?php
+
+function adoblockclass_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'block_admin_configure' || $form_id == 'block_add_block_form') {
+  
+    $block->module = $form['module']['#value'];
+    $block->delta = $form['delta']['#value'];
+	
+	$blockclass = adoblockclass_classfetch($block);
+				
+	$arrayclass=array(''=>'--- Select ---','layout1'=>'Layout 1(User Login Layout)','layout2'=>'Layout 2(Image Layout)');
+    
+    $form['adoblockclass'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Block Class'),
+      '#collapsible' => TRUE,
+	  '#collapsed' => FALSE,
+      '#weight' => 0,
+    );
+	
+    $form['adoblockclass']['suf_class'] = array(
+      '#type' => 'select',
+      '#title' => t('Block Class'),
+      '#default_value' => $blockclass,
+	  '#options' => $arrayclass,
+      '#description' => t('Choose the option in this select box, you will get the different layout for selected block.'),
+    );
+
+    $form['#submit'][] = 'adoblockclass_form_submit';
+  }
+}
+
+
+function adoblockclass_form_submit($form, &$form_state) {
+      $class = $form_state['values']['suf_class'];
+  
+	  db_delete('ado_block')
+      ->condition('module', $form_state['values']['module'])
+      ->condition('delta', $form_state['values']['delta'])
+      ->execute();
+  
+      if ($class) {
+		$query = db_insert('ado_block')->fields(array('module', 'delta', 'suf_class'));
+		$query->values(array(
+			'module' => $form_state['values']['module'],
+			'delta' => $form_state['values']['delta'],
+			'suf_class' => $form_state['values']['suf_class'],
+		  ));
+		  $query->execute();
+  }
+}
+
+function adoblockclass_classfetch($block) {
+	$output = db_query("SELECT suf_class FROM {ado_block} WHERE module = :module AND delta = :delta", array(
+				':module' => $block->module,
+				':delta' => $block->delta,
+			  ))->fetchField();
+			  
+  if ($output) {
+    return $output;
+  }
+
+}
+function adoblockclass_preprocess_block(&$variables){
+$variables['class_suffix'] = adoblockclass_classfetch($variables['block']);	
+
+}

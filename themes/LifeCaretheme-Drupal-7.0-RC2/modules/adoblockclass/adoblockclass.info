@@ -1,0 +1,11 @@
+name = Adodis Block Class
+description = Allows unique design for blocks.
+core = 7.x
+
+files[] = adoblockclass.module
+files[] = adoblockclass.install
+
+version = "7.1"
+core = "7.x"
+project = "adoblockclass"
+
