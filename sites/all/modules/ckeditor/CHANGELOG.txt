@@ -1,0 +1,20 @@
+-- 2010-01-13
+- Released CKEditor 7.x-1.0
+
+[#1025472] by OnkelTem: Starting slash in editor path result in Warnings
+[#1022562] In IE8 break button icon doesn't appear
+[#1023546] Useless ajax call when no security filters are checked
+[#1006770] Notice: Undefined index: filtered_html in ckeditor_profile_load()
+[#1022666] Removed Teaser break from the default toolbar in filtered html input format
+[#1006230] by yukare, tgf: Editor not loading for Full HTML
+[#1020820] by amateescu: CKEditor does not work after enabling javascript aggregation
+[#1011112] by Oren_Held: Support RTL also when CSS is not in theme mode (self/none)
+[#1020612] by amateescu: Extra table borders added by the Seven theme
+[#1003462] CKFinder path customization won't work
+
+
+-- 2010-12-15
+- Released CKEditor 7.x-1.0 RC
+
+-- 2010-10-26
+- Created initial dev version of the CKEditor module for Drupal 7.x
